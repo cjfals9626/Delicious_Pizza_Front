@@ -1,0 +1,23 @@
+{
+    "liveSassCompile.settings.formats": [
+        
+        {
+            "format": "expanded",   //컴파일된 css의 포멧을 어떤 스타일로 할 것인가.
+            "extensionName": ".css",    //컴파일된 css 파일 확장자명
+            "savePath": "/src/assets/css" // 컴파일된 css 파일이 저장될 경로.
+        },
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/src/assets/css"
+        }
+        //위 처럼 작성하면 expanded, compressed 스타일 둘 다 생성함.
+    ],
+    "liveSassCompile.settings.generateMap": false,  //scss 저장 시 map 파일 생기는 것을 막는 코드. default는 true
+
+    //원하는 파일만 컴파일하도록 함.
+    /*"liveSassCompile.settings.includeItems": [
+        //css 폴더 아래 scss 폴더 아래 .scss 파일들만 컴파일 하겠다.
+        "/css/scss/ *.scss"
+    ]*/
+}
