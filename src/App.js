@@ -4,19 +4,13 @@ import Layout from './components/layout/Layout';
 
 function App() {
 
-  //const content = useRoutes(routes);
+  const content = useRoutes(routes);
 
   return (
     
      <Layout>
       <div className="App">
-        {/* {content}         */}
-        ds
-        action
-        <br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        {content}        
       </div>
     </Layout> 
     
