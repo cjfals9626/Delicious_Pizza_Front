@@ -1,6 +1,6 @@
 import Home from "./components/pages/home/index";
 import Login from "./components/pages/auth/Login";
-import Auth from "./components/pages/Auth";
+import SignUp from "./components/pages/auth/Signup";
 import NotFound from "./components/pages/NotFound";
 
 export const routes = [
@@ -13,8 +13,11 @@ export const routes = [
         element: <Login />,
     },
     {
+        path: "/auth/signup",
+        element: <SignUp />,
+    },
+    {
         path: "*",
         element: <NotFound />,
     },
 ];
-    

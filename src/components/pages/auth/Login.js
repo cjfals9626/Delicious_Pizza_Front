@@ -30,7 +30,7 @@ const Login = () => {
     };
 
     return (
-        <Container className="vh-100">
+        <Container className="vh-100 align-content-center">
             <Row>
                 <Col xs={1} md={3}></Col>
                 <Col xs={10} md={6}>
