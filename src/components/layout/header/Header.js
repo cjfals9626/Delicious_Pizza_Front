@@ -14,7 +14,7 @@ function Header() {
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" id={header[`header-nav-bar`]}>
 
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/">PizzaRazzi</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

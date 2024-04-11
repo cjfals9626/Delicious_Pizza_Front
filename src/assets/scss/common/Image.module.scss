@@ -1,0 +1,46 @@
+.container {
+    width: 100%;
+    
+
+    &.home_carousel{
+        min-height: 180px;
+        max-height: 36vmin;
+        display: table;
+        text-align: center;
+        aspect-ratio: 3 / 1; /* width / height 비율*/
+    
+        .img-container {
+            display: table-cell;
+            vertical-align: middle;
+    
+            .content_img {
+                max-width: 100%;
+                max-height: 56vmin;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &.home_content{
+        max-width: 30vmax;
+        min-height: 180px;
+        max-height: 36vmin;
+        display: table;
+        text-align: center;
+        aspect-ratio: 1 / 1; /* width / height 비율*/
+    
+        .img-container {
+            display: table-cell;
+            vertical-align: middle;
+    
+            .content_img {         
+                height: 15vmax;                       
+                max-width: 15vmax;
+            
+                object-fit: contain;
+            }
+        }
+    }
+
+    
+}

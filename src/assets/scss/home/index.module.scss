@@ -1,4 +1,12 @@
-.container{
+.divide_horizen{
     width: 100%;
-    aspect-ratio: 3 / 1; /* width / height 비율*/
+    height: 5vh;
+    background-color: #5ce685;
+    margin: 20px 0;
+}
+.home_content{
+    .title{
+        text-align: center;
+    }
+    
 }
