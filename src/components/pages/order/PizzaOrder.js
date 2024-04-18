@@ -115,8 +115,6 @@ const PizzaOrder = () => {
     };
 
 
-
-
     return (
         <Container className="vh-100 align-content-center" style={{ overflow: 'auto' }}>
             <h1>피자 주문</h1>
@@ -150,12 +148,20 @@ const PizzaOrder = () => {
                 {step === 2 && (
                     <>
                         <Container className="topping container">
-                            <Button variant="secondary" onClick={handlePrevStep}>
-                                이전
-                            </Button>
-                            <Button variant="success" onClick={handleNextStep}>
-                                다음
-                            </Button>
+                            <Row>
+                                <Col>
+                                    <Button variant="secondary" onClick={handlePrevStep}>
+                                        도우 다시 선택하기
+                                    </Button>
+                                </Col>
+                                <Col className="d-flex justify-content-end">
+                                    <Button variant="success" onClick={handleNextStep}>
+                                        엣지 선택하기
+                                    </Button>
+                                </Col>
+
+                            </Row>
+
                             <Row>
                                 {tmpToppings.map((topping) => (
                                     <Col key={topping.id} xs={6} md={3} style={{ paddingTop: 10, paddingBottom: 10 }}>
@@ -177,6 +183,11 @@ const PizzaOrder = () => {
                 {step === 3 && (
                     <>
                         <Container className="edge container">
+                            <Col>
+                                <Button variant="secondary" onClick={handlePrevStep}>
+                                    토핑 다시 선택하기
+                                </Button>
+                            </Col>
                             <Row>
                                 {edges.map((edge) => (
                                     <Col key={edge.id} xs={6} md={3} style={{ paddingTop: 10, paddingBottom: 10 }}>
@@ -196,6 +207,12 @@ const PizzaOrder = () => {
                 )}
                 {step === 4 && (
                     <>
+                        <Row><Col>
+                            <Button variant="secondary" onClick={handlePrevStep}>
+                                엣지 다시 선택하기
+                            </Button>
+                        </Col></Row>
+
                         <Col xs={10} md={6}>
                             <Card body style={{ marginTop: "1rem", borderRadius: "10px" }}>
                                 <Form>
