@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import LoginForm from "./LoginForm";
-
+import GoogleButton from "./GoogleButton";
 
 
 const Login = () => {
@@ -44,6 +44,7 @@ const Login = () => {
                             handlePasswordChange={handlePasswordChange}
                             handleSubmit={handleSubmit}
                         />
+                        <GoogleButton />
                     </Card>
                 </Col>
                 <Col xs={1} md={3}></Col>

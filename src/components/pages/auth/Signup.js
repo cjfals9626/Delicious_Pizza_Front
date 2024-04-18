@@ -2,6 +2,9 @@ import React, { useState, useRef } from "react";
 import { Form, Button, Container, ProgressBar, Row, Col, Card, Modal  } from "react-bootstrap";
 import DaumPostcode from "react-daum-postcode";
 
+
+
+
 const SignUp = () => {
     const [step, setStep] = useState(1);
     const [email, setEmail] = useState("");
