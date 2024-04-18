@@ -22,7 +22,7 @@ const PizzaOrder = () => {
     const [detailAddress, setDetailAddress] = useState("");
 
     const [showModal, setShowModal] = useState(false);
-        
+
 
     //도우 선택
     const handleSelectDough = (doughId) => {
@@ -124,7 +124,7 @@ const PizzaOrder = () => {
                 <ProgressBar now={(step / steps.length) * 100} label={steps[step - 1].title} />
                 <p>{steps[step - 1].title}</p>
             </Row>
-            <Row>
+            <Row className="justify-content-center">
                 {step === 1 && (
                     <>
                         <Container className="dough container">
@@ -150,11 +150,11 @@ const PizzaOrder = () => {
                 {step === 2 && (
                     <>
                         <Container className="topping container">
-                        <Button variant="secondary" onClick={handlePrevStep}>
-                                        이전
-                                    </Button>
+                            <Button variant="secondary" onClick={handlePrevStep}>
+                                이전
+                            </Button>
                             <Button variant="success" onClick={handleNextStep}>
-                                        다음
+                                다음
                             </Button>
                             <Row>
                                 {tmpToppings.map((topping) => (
@@ -170,7 +170,7 @@ const PizzaOrder = () => {
                                     </Col>
                                 ))}
                             </Row>
-                            
+
                         </Container>
                     </>
                 )}
@@ -196,48 +196,54 @@ const PizzaOrder = () => {
                 )}
                 {step === 4 && (
                     <>
-                        <Form>
-                            <Form.Group controlId="formBasicAddress">
-                                <Form.Label>주소</Form.Label>
-                                <div className="d-flex">
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter address"
-                                        value={address}
-                                        readOnly
-                                        onClick={toggleModal}
-                                    />
-                                    <Button variant="primary" onClick={toggleModal}>
-                                        주소 찾기
+                        <Col xs={10} md={6}>
+                            <Card body style={{ marginTop: "1rem", borderRadius: "10px" }}>
+                                <Form>
+                                    <Form.Group controlId="formBasicAddress">
+                                        <Form.Label>주소</Form.Label>
+                                        <div className="d-flex">
+                                            <Form.Control
+                                                type="text"
+                                                placeholder="Enter address"
+                                                value={address}
+                                                readOnly
+                                                onClick={toggleModal}
+                                            />
+                                            <Button variant="primary" onClick={toggleModal}>
+                                                주소 찾기
+                                            </Button>
+                                        </div>
+                                    </Form.Group>
+                                    <Form.Group controlId="formBasicStreetAddress">
+                                        <Form.Label>우편번호</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Street address"
+                                            value={zoneCode}
+                                            readOnly
+                                        />
+                                    </Form.Group>
+                                    <Form.Group controlId="formBasicDetailAddress">
+                                        <Form.Label>상세 주소</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter detail address"
+                                            value={detailAddress}
+                                            onChange={(e) => setDetailAddress(e.target.value)}
+                                        />
+                                    </Form.Group>
+
+                                    <Button variant="success" onClick={handleSubmit}>
+                                        주문하기
                                     </Button>
-                                </div>
-                            </Form.Group>
-                            <Form.Group controlId="formBasicStreetAddress">
-                                <Form.Label>우편번호</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Street address"
-                                    value={zoneCode}
-                                    readOnly
-                                />
-                            </Form.Group>
-                            <Form.Group controlId="formBasicDetailAddress">
-                                <Form.Label>상세 주소</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Enter detail address"
-                                    value={detailAddress}
-                                    onChange={(e) => setDetailAddress(e.target.value)}
-                                />
-                            </Form.Group>
-                            
-                            <Button variant="success" onClick={handleSubmit}>
-                                주문하기
-                            </Button>
-                            <Button variant="secondary" onClick={handlePrevStep}>
-                                이전
-                            </Button>
-                        </Form>
+                                    <Button variant="secondary" onClick={handlePrevStep}>
+                                        이전
+                                    </Button>
+                                </Form>
+                            </Card>
+
+                        </Col>
+
                     </>
                 )}
 
