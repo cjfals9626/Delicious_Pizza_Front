@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, ProgressBar, Row, Col, Card, Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const CheckPassword = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,7 +15,7 @@ const CheckPassword = () => {
         if (password === 'password') {
             setError(false);
             setErrorMessage('');
-            // Redirect to the next page
+            navigate('/p-info/updateUserInfo');
         } else {
             setError(true);
             setErrorMessage('Password is incorrect');
@@ -30,10 +33,10 @@ const CheckPassword = () => {
                 <Col xs={1} md={3} />
 
             </Row>
-            <h1>Check Password</h1>
-            <Form>
+            <h1>비밀번호 확인</h1>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>비밀번호</Form.Label>
                     <Form.Control
                         type="password"
                         placeholder="Enter Password"
