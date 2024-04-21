@@ -2,6 +2,7 @@ import Home from "./components/pages/home/index";
 import Login from "./components/pages/auth/Login";
 import SignUp from "./components/pages/auth/Signup";
 import PizzaOrder from "./components/pages/order/PizzaOrder";
+import CheckPassword from "./components/pages/privateInfo/CheckPassword";
 import NotFound from "./components/pages/NotFound";
 
 export const routes = [
@@ -20,6 +21,10 @@ export const routes = [
     {
         path: "/order/pizza",
         element: <PizzaOrder />,
+    },
+    {
+        path: "/p-info/check-password",
+        element: <CheckPassword />,
     },
     {
         path: "*",
