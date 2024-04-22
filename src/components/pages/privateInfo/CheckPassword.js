@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
-import { Form, Button, Container, ProgressBar, Row, Col, Card, Modal } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 
-const CheckPassword = () => {
+
+const CheckPassword = ({setIsAuthenticated}) => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    const navigate = useNavigate();
     
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (password === 'password') {
+            setIsAuthenticated(true);
             setError(false);
             setErrorMessage('');
-            navigate('/p-info/updateUserInfo');
         } else {
             setError(true);
             setErrorMessage('Password is incorrect');
