@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { Form, Button, Container, ProgressBar, Row, Col, Card } from "react-bootstrap";
+import { Button, Container, ProgressBar, Row, Col, Card, Dropdown, DropdownButton, NavDropdown } from "react-bootstrap";
+import OptionIcon from "../../icons/OptionIcon";
 
 
 const OrderList = () => {
+    const optionIcon = <OptionIcon />;
 
     const [orderList, setOrderList] = useState([]);
-    
+
     useEffect(() => {
 
         setOrderList([
@@ -74,60 +76,75 @@ const OrderList = () => {
     return (
         //새로로 나열
         <>
-        <Container>
-            <Row>
-                <Col>
-                    <h1>주문 목록</h1>
-                </Col>
-            </Row>
-            <Row>
-                {orderList.map((order, index) => {
-                    return (
-                        <Col key={index} xs={12} md={6} lg={4}>
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>{order.orderName}</Card.Title>
-                                    <Card.Text>
-                                        주문 시간: {order.orderTime}
-                                    </Card.Text>
-                                    <Card.Text>
-                                        주문 금액: {order.totalPrice}원
-                                    </Card.Text>
-                                    <Card.Text style={{color: orderStatusText[order.orderStatus]}}>
-                                        주문 상태: {order.orderStatus}
-                                    </Card.Text>
-                                    <Button variant="primary">상세보기</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    );
-                })}
-            </Row>
-        </Container>
-        <Container>
-        <Row>
-            {orderList.map((order, index) => {
-                return (
-                    <Col key={index} xs={12} md={6} lg={4}>
-                        <Card>
-                            <Card.Body>
-                                <Card.Title>{order.orderName}</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">{order.orderTime}</Card.Subtitle>
-                                <Card.Text>
-                                    주문번호 : {order.orderId}
-                                    <br />
-                                    주문금액 : {order.totalPrice}
-                                </Card.Text>    
-                                <ProgressBar variant={orderStatusColor[order.orderStatus]} now={100} label={`주문상태 : ${order.orderStatus}`} />
-                            </Card.Body>
-                        </Card>
+            <Container>
+                <Row>
+                    <Col>
+                        <h1>주문 목록</h1>
                     </Col>
-                );
-            })}
-        </Row>
-    </Container>
+                </Row>
+                <Row>
+                    {orderList.map((order, index) => {
+                        return (
+                            <Col key={index} xs={12} md={6} lg={4}>
+                                <Card>
+                                    <Card.Body>
+                                        <Card.Title>{order.orderName}</Card.Title>
+                                        <Card.Text>
+                                            주문 시간: {order.orderTime}
+                                        </Card.Text>
+                                        <Card.Text>
+                                            주문 금액: {order.totalPrice}원
+                                        </Card.Text>
+                                        <Card.Text style={{ color: orderStatusText[order.orderStatus] }}>
+                                            주문 상태: {order.orderStatus}
+                                        </Card.Text>
+                                        <Button variant="primary">상세보기</Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        );
+                    })}
+                </Row>
+            </Container>
+            <Container>
+                <Row>
+                    {orderList.map((order, index) => {
+                        return (
+                            <Col key={index} xs={12} md={6} lg={4}>
+                                <Card>
+                                    <Card.Body>
+                                        <Row>
+                                            <Col>
+                                                <Card.Title>{order.orderName}</Card.Title>
+                                                </Col>
+                                                <Col md="auto">
+                                            <NavDropdown id="dropdown-basic-button" title={optionIcon} className="float-right">
+                                                <NavDropdown.Item href="#/action-1">수정</NavDropdown.Item>
+                                                <NavDropdown.Item href="#/action-2">삭제</NavDropdown.Item>
+                                            </NavDropdown>
+                                            </Col>
+                                                {/* <NavDropdown id="dropdown-basic-button" title={optionIcon}>
+                                                    <NavDropdown.Item href="#/action-1">수정</NavDropdown.Item>
+                                                    <NavDropdown.Item href="#/action-2">삭제</NavDropdown.Item>
+                                                </NavDropdown> */}
+                                        </Row>
+
+                                        <Card.Subtitle className="mb-2 text-muted">{order.orderTime}</Card.Subtitle>
+                                        <Card.Text>
+                                            주문번호 : {order.orderId}
+                                            <br />
+                                            주문금액 : {order.totalPrice}
+                                        </Card.Text>
+                                        <ProgressBar variant={orderStatusColor[order.orderStatus]} now={100} label={`주문상태 : ${order.orderStatus}`} />
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        );
+                    })}
+                </Row>
+            </Container>
         </>
-        
+
     );
 }
 
