@@ -4,6 +4,7 @@ import SignUp from "./components/pages/auth/Signup";
 import PizzaOrder from "./components/pages/order/PizzaOrder";
 import CheckPassword from "./components/pages/privateInfo/CheckPassword";
 import UpdateUserInfo from "./components/pages/privateInfo/UpdateUserInfo";
+import OrderList from "./components/pages/order/OrderList";
 import NotFound from "./components/pages/NotFound";
 
 export const routes = [
@@ -30,6 +31,10 @@ export const routes = [
     {
         path: "/p-info/updateUserInfo",
         element: <UpdateUserInfo />,
+    },
+    {
+        path: "/order/list",
+        element: <OrderList />,
     },
     {
         path: "*",

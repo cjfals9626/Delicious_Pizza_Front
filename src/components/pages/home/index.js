@@ -7,7 +7,6 @@ import Col from 'react-bootstrap/Col';
 import homeStyle from "../../../assets/scss/home/index.module.scss"
 import Box from '../../common/Box'
 import Button from 'react-bootstrap/Button';
-import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 
 function Home() {
