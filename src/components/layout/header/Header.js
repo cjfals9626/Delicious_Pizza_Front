@@ -3,12 +3,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import UserIcon from '../../icons/UserIcon';
+import AlramIcon from '../../icons/AlramIcon';
 import header from '../../../assets/scss/layout/header/Header.module.scss';
 import '../../../assets/scss/layout/header/Header.scss'
 
 
 function Header() {
   const userIcon = <UserIcon />;
+  const alramIcon = <AlramIcon />;
+
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" id={header[`header-nav-bar`]}>
@@ -27,6 +30,17 @@ function Header() {
             <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link>
+            <NavDropdown title={alramIcon} id="collapsible-nav-dropdown" >
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
             <NavDropdown title={userIcon} id="collapsible-nav-dropdown" >
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
