@@ -23,7 +23,7 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
-            
+
           </Nav>
           <Nav>
             <Nav.Link href="#deets">More deets</Nav.Link>
@@ -42,14 +42,12 @@ function Header() {
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title={userIcon} id="collapsible-nav-dropdown" >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item href="/p-info/check-password">
+                개인 정보 수정
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="/order/list">
+                주문 내역
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

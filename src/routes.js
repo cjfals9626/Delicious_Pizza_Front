@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 import Home from "./components/pages/home/index";
 import Login from "./components/pages/auth/Login";
 import SignUp from "./components/pages/auth/Signup";
